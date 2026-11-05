@@ -1,5 +1,7 @@
 # CAD Light Cleaner 0.1
 
+Illustrator용 JSX 업데이트는 [CAD Cleaner v1.3 사용법](illustrator/README.md)과 [다운로드 ZIP](https://github.com/selpix2026/Selpix/raw/refs/heads/main/downloads/CAD_Cleaner_v1.3_Illustrator.zip)을 참고하세요. 아래 내용은 별도의 DXF 데스크톱 개발본입니다.
+
 Windows 11용 DXF 경량화 데스크톱 프로그램의 첫 개발 버전입니다. Illustrator와 독립된 계산 프로세스로 실행됩니다. **전체 인수인계 요구사항이 완성된 버전은 아닙니다.**
 
 ## 다운로드

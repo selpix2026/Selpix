@@ -1,0 +1,10 @@
+{
+  "name": "selpix-cad-cleaner-checks",
+  "private": true,
+  "scripts": {
+    "test:jsx": "node --test --test-isolation=none tests/jsx_*.test.cjs"
+  },
+  "devDependencies": {
+    "acorn": "8.15.0"
+  }
+}

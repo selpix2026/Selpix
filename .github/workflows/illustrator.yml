@@ -1,0 +1,24 @@
+name: Illustrator JSX checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  jsx:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run test:jsx
+      - name: Check generated Windows controller logic without Illustrator
+        shell: powershell
+        run: |
+          node tests/export_controller.cjs "$env:RUNNER_TEMP\cad-control.ps1"
+          if ($LASTEXITCODE -ne 0) { throw 'Controller export failed' }
+          ./tests/verify_controller.ps1 -Path "$env:RUNNER_TEMP\cad-control.ps1"
